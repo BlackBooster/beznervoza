@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users
+  root 'home#index'
+
   # root 'home#index'
   # get 'persons/profile', as: 'user_root'
   # The priority is based upon order of creation: first created -> highest priority.
