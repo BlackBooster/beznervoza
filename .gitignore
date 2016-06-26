@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore .idea folder
+.idea
+
+# Ignore config files
+config/database.yml
