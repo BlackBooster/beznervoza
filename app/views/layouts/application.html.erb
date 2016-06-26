@@ -2,11 +2,13 @@
 <html>
 <head>
   <title>Beznevroza</title>
+  <%= stylesheet_link_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <%= yield %>
 
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>
