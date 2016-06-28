@@ -8,5 +8,6 @@ class AddInfoToUsers < ActiveRecord::Migration
     add_column :users, :street, :string, :limit=>100
     add_column :users, :house, :string, :limit=>100
     add_column :users, :apartment, :string, :limit=>3
+    add_column :users, :skype, :string, :limit=>50
   end
 end

@@ -17,34 +17,59 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :password %>
+          <%= f.label :password, 'Пароль' %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, class: 'form-control', autocomplete: 'off' %>
+          <%= f.password_field :password, class: 'form-control', placeholder: 'Пароль', autocomplete: 'off' %>
         </div>
 
         <div class="form-group">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: 'off' %>
+          <%= f.label :password_confirmation, 'Подтвердите пароль' %>
+          <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Подтвердите пароль', autocomplete: 'off' %>
         </div>
 
         <div class="form-group">
-          <%= f.label :last_name %>
-          <%= f.text_field :last_name, class: 'form-control' %>
+          <%= f.label :last_name, 'Фамилия'%>
+          <%= f.text_field :last_name, class: 'form-control', placeholder: 'Фамилия' %>
         </div>
 
         <div class="form-group">
-          <%= f.label :first_name %>
-          <%= f.text_field :first_name, class: 'form-control' %>
+          <%= f.label :first_name, 'Имя' %>
+          <%= f.text_field :first_name, class: 'form-control', placeholder: 'Имя' %>
         </div>
 
         <div class="form-group">
-          <%= f.label :sur_name %>
-          <%= f.text_field :sur_name, class: 'form-control' %>
+          <%= f.label :sur_name, 'Отчество' %>
+          <%= f.text_field :sur_name, class: 'form-control', placeholder: 'Отчество' %>
         </div>
 
-        <%= f.submit 'Sign up', class: 'btn btn-lg btn-primary btn-block' %>
+        <div class="form-group">
+          <%= f.label :date_of_birth, 'Дата рождения' %><br />
+          <%= f.date_select :date_of_birth, :start_year=>1900 %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :is_female, 'Пол' %><br />
+          <%= f.label :is_female, "Мужской", :value => "true"  %>
+          <%= f.radio_button :is_female, true %>
+          <%= f.label :is_female, "Женский", :value => "false" %>
+          <%= f.radio_button :is_female, false %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label 'Адрес проживания'%><br />
+          <%= f.text_field :street, class: 'small-width-input middle-width-input', placeholder: 'Улица' %>
+          <%= f.text_field :house, class: 'small-width-input', placeholder: 'Дом' %>
+          <%= f.text_field :apartment, class: 'small-width-input apartment-input-width', placeholder: 'Квартира' %>
+        </div>
+
+        <div class="form-group margin_45px">
+          <%= f.label 'Скайп' %>
+          <%= f.text_field :skype, placeholder: 'Скайп', class: 'form-control' %>
+        </div>
+
+        <%= f.submit 'Зарегестрироваться', class: 'btn btn-lg btn-primary btn-block' %>
       <% end %>
 
       <%= render 'users/shared/links' %>

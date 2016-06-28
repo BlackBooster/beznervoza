@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160622132449) do
     t.string   "street",                 limit: 100
     t.string   "house",                  limit: 100
     t.string   "apartment",              limit: 3
+    t.string   "skype",                  limit: 50
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
