@@ -62,6 +62,7 @@
           <%= f.text_field :street, class: 'small-width-input middle-width-input', placeholder: 'Улица' %>
           <%= f.text_field :house, class: 'small-width-input', placeholder: 'Дом' %>
           <%= f.text_field :apartment, class: 'small-width-input apartment-input-width', placeholder: 'Квартира' %>
+          <%= f.text_field :zipcode, class: 'small-width-input', placeholder: 'Индекс' %>
         </div>
 
         <div class="form-group margin_45px">
@@ -69,7 +70,7 @@
           <%= f.text_field :skype, placeholder: 'Скайп', class: 'form-control' %>
         </div>
 
-        <%= f.submit 'Зарегестрироваться', class: 'btn btn-lg btn-primary btn-block' %>
+        <%= f.submit 'Зарегистрироваться', class: 'btn btn-lg btn-primary btn-block' %>
       <% end %>
 
       <%= render 'users/shared/links' %>
