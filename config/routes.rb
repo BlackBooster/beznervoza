@@ -2,9 +2,16 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users
+  resources :users do #will return get_regions as action(method)
+    collection do
+      get 'get_regions'
+      get 'get_cities'
+    end
+  end
+
   root 'home#index'
 
+  # get 'users/get_regions/:country_id' => 'users#get_regions' #will return get_regions as id
   # root 'home#index'
   # get 'persons/profile', as: 'user_root'
   # The priority is based upon order of creation: first created -> highest priority.

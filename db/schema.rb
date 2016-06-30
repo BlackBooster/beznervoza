@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622132449) do
+ActiveRecord::Schema.define(version: 20160629122412) do
+
+  create_table "cities", force: :cascade do |t|
+    t.integer  "country_id", limit: 4
+    t.integer  "region_id",  limit: 4
+    t.string   "name",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cities", ["region_id"], name: "index_cities_on_region_id", using: :btree
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "code",       limit: 255
+    t.string   "name",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.integer  "country_id", limit: 4
+    t.string   "name",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
@@ -33,12 +57,18 @@ ActiveRecord::Schema.define(version: 20160622132449) do
     t.boolean  "is_female",                          default: false
     t.string   "street",                 limit: 100
     t.string   "house",                  limit: 100
-    t.string   "apartment",              limit: 3
+    t.string   "apartment",              limit: 5
     t.string   "skype",                  limit: 50
     t.string   "zipcode",                limit: 5
+    t.integer  "country_id",             limit: 4
+    t.integer  "region_id",              limit: 4
+    t.integer  "city_id",                limit: 4
   end
 
+  add_index "users", ["city_id"], name: "index_users_on_city_id", using: :btree
+  add_index "users", ["country_id"], name: "index_users_on_country_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["region_id"], name: "index_users_on_region_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
