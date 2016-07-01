@@ -59,9 +59,8 @@
 
         <div class="form-group">
           <%= f.select :country_id, options_for_select(Country.all.map {|c| [ c.name, c.id ] }), :onchange => 'regions.js' %>
-          <%#= f.select :region_id, class: 'hidden', :include_blank => true  %>
-          <%#= render 'users/get_cities' %>
-          <%#= f.select :city_id, :include_blank => true %>
+          <%= f.select :region_id, options_for_select([]) %>
+          <%= f.select :city_id, options_for_select([])%>
         </div>
 
         <div class="form-group">
