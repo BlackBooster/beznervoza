@@ -17,23 +17,22 @@
           <li><%= link_to 'Главная', root_path %></li>
           <li><a href="#services">Услуги</a></li>
           <li><a href="#pricing">Тарифы</a></li>
-
+          <li><%= link_to 'Контакты', current_user%></li>
           <% if user_signed_in? %>
               <li>
                 <%= link_to('Выход', destroy_user_session_path, :method => :delete) %>
               </li>
-              <!--<li>-->
-                <!--<%#= link_to('Edit registration', edit_user_registration_path) %>-->
-              <!--</li>-->
+              <li>
+                <%#= link_to('Edit registration', edit_user_registration_path) %>
+              </li>
           <% else %>
               <li>
-                <%= link_to 'Вход', new_user_session_path %>
+                <%= link_to('Вход', new_user_session_path) %>
               </li>
               <li>
                 <%= link_to('Регистрация', new_user_registration_path)  %>
               </li>
           <% end %>
-          <li><a href="blog.html">Контакты</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->

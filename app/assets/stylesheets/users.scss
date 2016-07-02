@@ -38,3 +38,14 @@
 .zipcode-input-width {
   width: 17%;
 }
+
+input.error {
+  border: 1px solid #ff0000;
+}
+
+label.error {
+  color: #ff0000;
+}
+#error_explanation {
+  color: #ff0000;
+}

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
+  # match '/users/:id/show', :to => 'users#show', :as => :user, :via => :get
   resources :users do #will return get_regions as action(method)
+    member do
+      get '/users/:id' => 'users#show', :as => 'user'
+    end
     collection do
       get 'get_regions'
       get 'get_cities'
@@ -10,7 +13,6 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
-
   # get 'users/get_regions/:country_id' => 'users#get_regions' #will return get_regions as id
   # root 'home#index'
   # get 'persons/profile', as: 'user_root'

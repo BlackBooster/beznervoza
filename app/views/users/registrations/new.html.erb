@@ -3,7 +3,7 @@
     <div class="col-md-5">
       <div class="panel-heading">
         <div class="panel-title text-center">
-          <h1 class="title">Company Name</h1>
+          <h1 class="title">Beznevroza</h1>
           <hr />
         </div>
       </div>
@@ -12,15 +12,12 @@
         <%= devise_error_messages! %>
 
         <div class="form-group">
-          <%= f.label :email, 'Email address' %>
+          <%= f.label :email, 'E-mail адрес' %>
           <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true %>
         </div>
 
         <div class="form-group">
           <%= f.label :password, 'Пароль' %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
           <%= f.password_field :password, class: 'form-control', placeholder: 'Пароль', autocomplete: 'off' %>
         </div>
 
@@ -51,15 +48,12 @@
 
         <div class="form-group">
           <%= f.label :is_female, 'Пол' %><br />
-          <%= f.label :is_female, "Мужской", :value => "true"  %>
-          <%= f.radio_button :is_female, true %>
-          <%= f.label :is_female, "Женский", :value => "false" %>
-          <%= f.radio_button :is_female, false %>
+          <%= f.select :is_female, User::GENDER_TYPES, class: 'form-control' %>
         </div>
 
         <div class="form-group">
           <%= f.label 'Адрес проживания' %><br />
-          <%= f.select :country_id, options_for_select(Country.all.map {|c| [ c.name, c.id ] }) %>
+          <%= f.select :country_id, options_for_select(Country.all.map {|c| [ c.name, c.id ] }), :prompt => 'Выберите страну' %>
           <%#= f.select :region_id, options_for_select([]) %>
           <%#= f.select :city_id, options_for_select([])%>
         </div>
