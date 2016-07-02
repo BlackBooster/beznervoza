@@ -1,3 +1,5 @@
 $(document).ready(function() {
+  $('#region_id').remove();
+  $('#city_id').remove();
   $('#user_country_id').after('<%= j render(:partial => 'users/get_regions') %>');
 });

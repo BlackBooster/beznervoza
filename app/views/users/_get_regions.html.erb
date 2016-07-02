@@ -1,1 +1,1 @@
-<%= select_tag :region_id, options_for_select(@regions.map{ |r| [r.name, r.id] }), :onchange => 'regions.js' %>
+<%= select_tag :region_id, options_for_select(@regions.map{ |r| [r.name, r.id] }) %>
