@@ -7,13 +7,13 @@ $(document).on('ready', function(){
       data: { country_id: country_id }
     })
   });
-  //
-  //$('#region_id').on('change', function (){
-  //  var region_id = $('#region_id').val();
-  //  $.ajax({
-  //    url: "/users/get_cities",
-  //    type: "GET",
-  //    data: { region_id: region_id }
-  //  })
-  //});
+
+  $('#new_user').on('change', '#region_id', function (){
+   var region_id = $('#region_id').val();
+   $.ajax({
+     url: "/users/get_cities",
+     type: "GET",
+     data: { region_id: region_id }
+   })
+  });
 });
