@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   end
 
   def get_regions
-    @country = Country.find(params[:country_id])
-    @regions = @country.regions
+    country = Country.find(params[:country_id])
+    @regions = country.regions
 
     respond_to do |format|
       format.js
@@ -12,9 +12,8 @@ class UsersController < ApplicationController
   end
 
   def get_cities
-    @country = Country.find(params[:country_id])
-    @regions = @country.regions
-    @cities  = @regions.cities
+    region = Region.find(params[:region_id])
+    @cities  = region.cities
 
     respond_to do |format|
       format.js
