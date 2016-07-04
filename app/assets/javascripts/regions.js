@@ -7,9 +7,10 @@ $(document).on('ready', function(){
       data: { country_id: country_id }
     })
   });
+  //$('#user_region_id').remove();
 
-  $('#new_user').on('change', '#region_id', function (){
-   var region_id = $('#region_id').val();
+  $('#new_user').on('change', '#user_region_id', function (){
+   var region_id = $('#user_region_id').val();
    $.ajax({
      url: "/users/get_cities",
      type: "GET",

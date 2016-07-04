@@ -1,1 +1,1 @@
-<%= select_tag :city_id, options_for_select(@cities.map{ |c| [c.name, c.id] }), :prompt => 'Выберите город' %>
+<%= select_tag 'user[city_id]', options_for_select(@cities.map{ |c| [c.name, c.id] }), :prompt => 'Выберите город' %>

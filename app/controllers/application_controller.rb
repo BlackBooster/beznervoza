@@ -8,8 +8,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # Fields for sign up
-    devise_parameter_sanitizer.
-        for(:sign_up) { |u| u.permit(:email,
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email,
                                      :password,
                                      :last_name,
                                      :first_name,
@@ -17,7 +16,6 @@ class ApplicationController < ActionController::Base
                                      :date_of_birth,
                                      :is_female,
                                      :street,
-                                     :string,
                                      :house,
                                      :apartment,
                                      :skype,

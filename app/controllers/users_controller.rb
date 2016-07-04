@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  def index
-
-  end
-
   def show
     @user = User.find(params[:id])
     @country = @user.country.name
@@ -16,7 +12,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.json { render :layout => false}
     end
   end
 
@@ -26,7 +21,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.json { render :layout => false}
     end
   end
 end
