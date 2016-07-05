@@ -38,6 +38,11 @@ gem 'devise', '4.1.1'
 
 group :development do
   gem 'better_errors', '~> 2.1'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 group :development, :test do
