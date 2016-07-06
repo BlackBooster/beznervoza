@@ -1,5 +1,5 @@
 class AddInfoToUsers < ActiveRecord::Migration
-  def up
+  def change
     add_column :users, :last_name, :string, :limit => 50
     add_column :users, :first_name, :string, :limit => 50
     add_column :users, :sur_name, :string, :limit => 50

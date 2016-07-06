@@ -55,9 +55,6 @@ ActiveRecord::Schema.define(version: 20160706121709) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
     t.string   "last_name",              limit: 50
     t.string   "first_name",             limit: 50
     t.string   "sur_name",               limit: 50
@@ -68,10 +65,19 @@ ActiveRecord::Schema.define(version: 20160706121709) do
     t.string   "apartment",              limit: 5
     t.string   "skype",                  limit: 50
     t.string   "zipcode",                limit: 5
+    t.integer  "country_id"
+    t.integer  "region_id"
+    t.integer  "city_id"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "users", ["city_id"], name: "index_users_on_city_id", using: :btree
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["country_id"], name: "index_users_on_country_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["region_id"], name: "index_users_on_region_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
