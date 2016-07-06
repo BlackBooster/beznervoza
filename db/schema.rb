@@ -43,21 +43,31 @@ ActiveRecord::Schema.define(version: 20160706121709) do
   add_index "regions", ["country_id"], name: "index_regions_on_country_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                              default: "",    null: false
+    t.string   "encrypted_password",                 default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "last_name",              limit: 50
+    t.string   "first_name",             limit: 50
+    t.string   "sur_name",               limit: 50
+    t.datetime "date_of_birth"
+    t.boolean  "is_female",                          default: false
+    t.string   "street",                 limit: 100
+    t.string   "house",                  limit: 100
+    t.string   "apartment",              limit: 5
+    t.string   "skype",                  limit: 50
+    t.string   "zipcode",                limit: 5
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
