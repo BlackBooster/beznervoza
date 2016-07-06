@@ -76,7 +76,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  Rails.application.routes.default_url_options[:host] = 'domain.com'
+
+  Rails.application.routes.default_url_options[:host] = 'alpha-beznevroza.herokuapp.com'
+
   config.action_mailer.delivery_method = :sendgrid_actionmailer
   config.action_mailer.sendgrid_actionmailer_settings = {
     api_key: ENV['SENDGRID_API_KEY']
