@@ -82,8 +82,8 @@ Rails.application.configure do
       :address        => "smtp.sendgrid.net",
       :port           => "25",
       :authentication => :plain,
-      :user_name      => ENV['SENDGRID_USERNAME'],
-      :password       => ENV['SENDGRID_PASSWORD'],
-      :domain         => ENV['SENDGRID_DOMAIN']
+      :user_name      => ENV['app53227976@heroku.com'],
+      :password       => ENV['gsyt450@!@'],
+      :domain         => ENV['alpha-beznevroza.herokuapp.com']
   }
 end
