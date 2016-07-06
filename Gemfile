@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma', '~> 3.4'
 
 gem 'devise', '4.1.1'
+
+gem 'sendgrid'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -38,11 +40,7 @@ gem 'devise', '4.1.1'
 
 group :development do
   gem 'better_errors', '~> 2.1'
-  gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+
 end
 
 group :development, :test do
