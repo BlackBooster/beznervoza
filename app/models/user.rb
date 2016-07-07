@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   GENDER_TYPES = [['Мужской', false], ['Женский', true]]
   validates_inclusion_of :is_female, in: [false, true]
+  validates :email, format: { without: /\b[A-Z0-9._%a-z\-]+@mail\.ru\z/,
+                              message: "Извините, регистрация через mail.ru недоступна, попробуйте другой ящик." }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
