@@ -65,11 +65,14 @@ en:
       not_found: "не найдена"
       already_confirmed: "уже подтверждена. Пожалуйста, попробуйте войти в систему"
       not_locked: "не заблокирована"
+      taken: "адрес уже занят, попробуйте другой"
       not_saved:
         one: "%{resource}: сохранение не удалось из-за %{count} ошибки"
         few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         other: "%{resource}: сохранение не удалось из-за %{count} ошибки"
+        password:
+          blank: "Укажите пароль"
 
   devise:
     failure:
