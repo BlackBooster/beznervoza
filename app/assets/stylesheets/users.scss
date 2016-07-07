@@ -49,3 +49,37 @@ label.error {
 #error_explanation {
   color: #ff0000;
 }
+
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    z-index: 1031 !important;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+    position: relative;
+ }
+
+.alert-success {
+    z-index: 1031 !important;
+    position: relative;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    z-index: 1031 !important;
+    position: relative;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }

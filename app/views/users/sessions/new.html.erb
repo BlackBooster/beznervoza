@@ -7,29 +7,28 @@
           <hr />
         </div>
       </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, class: 'form-control', autofocus: true %>
+          </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, class: 'form-control', autofocus: true %>
-  </div>
+          <div class="form-group">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
+          </div>
 
-  <div class="form-group">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
-  </div>
+          <% if devise_mapping.rememberable? -%>
+            <div class="form-group">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="form-group">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-    <%= f.submit "Log in", class: 'btn btn-lg btn-primary btn-block' %>
-<% end %>
-
-<%= render "users/shared/links" %>
+            <%= f.submit "Log in", class: 'btn btn-lg btn-primary btn-block' %>
+        <% end %>
+        <%= devise_error_messages! %>
+        <%= render "users/shared/links" %>
     </div>
   </div>
 </div>
