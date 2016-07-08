@@ -17,10 +17,10 @@ $(document).on('ready', function(){
      data: { region_id: region_id }
    })
   });
-  $("#new_user").validate({
+  $("#new_user, #login_user").validate({
     rules: {
       'user[email]': {required: true, email: true},
-      'user[password]': {required: true, minlength: 6},
+      'user[password]': {required: true, minlength: 8},
       'user[password_confirmation]': {required: true, equalTo: '#user_password'},
       'user[last_name]': { required: true },
       'user[first_name]': { required: true },

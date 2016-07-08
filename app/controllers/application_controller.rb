@@ -23,22 +23,6 @@ class ApplicationController < ActionController::Base
                                      :country_id,
                                      :region_id,
                                      :city_id) }
-    # devise_parameter_sanitizer.permit(:sign_up, keys: [:email,
-    #                                                    :password,
-    #                                                    :last_name,
-    #                                                    :first_name,
-    #                                                    :sur_name,
-    #                                                    :date_of_birth,
-    #                                                    :is_female,
-    #                                                    :street,
-    #                                                    :string,
-    #                                                    :house,
-    #                                                    :apartment,
-    #                                                    :skype,
-    #                                                    :zipcode,
-    #                                                    :country_id,
-    #                                                    :region_id,
-    #                                                    :city_id])
     # Fields for editing an existing account
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username,
                                                                    :email,

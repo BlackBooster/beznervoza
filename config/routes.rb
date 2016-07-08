@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
+  get '/home/welcome' => 'home#welcome', :as => 'welcome'
   # match '/users/:id/show', :to => 'users#show', :as => :user, :via => :get
   resources :users do #will return get_regions as action(method)
     member do
