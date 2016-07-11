@@ -1,0 +1,4 @@
+$(document).ready(function() {
+  $('#city_id').remove();
+  $('#user_region_id').after('<%= j render(:partial => 'users/get_cities') %>');
+});

@@ -1,34 +1,78 @@
-<h2>Sign up</h2>
+<div class="container sign_up">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="panel-heading">
+        <div class="panel-title text-center">
+          <h1 class="title">Beznevroza</h1>
+          <hr />
+        </div>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+        <div class="form-group">
+          <%= f.label :email, 'E-mail адрес' %>
+          <%= f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password, 'Пароль' %>
+          <%= f.password_field :password, class: 'form-control', placeholder: 'Пароль', autocomplete: 'off' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation, 'Подтвердите пароль' %>
+          <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Подтвердите пароль', autocomplete: 'off' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name, 'Фамилия'%>
+          <%= f.text_field :last_name, class: 'form-control', placeholder: 'Фамилия' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :first_name, 'Имя' %>
+          <%= f.text_field :first_name, class: 'form-control', placeholder: 'Имя' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sur_name, 'Отчество' %>
+          <%= f.text_field :sur_name, class: 'form-control', placeholder: 'Отчество' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :date_of_birth, 'Дата рождения' %><br />
+          <%= f.date_select :date_of_birth, :start_year=>1900 %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :is_female, 'Пол' %><br />
+          <%= f.select :is_female, User::GENDER_TYPES, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label 'Адрес проживания' %><br />
+          <%= f.select :country_id, options_for_select(Country.all.map {|c| [ c.name, c.id ] }), :prompt => 'Выберите страну' %>
+          <%#= f.select :region_id, options_for_select([]) %>
+          <%#= f.select :city_id, options_for_select([])%>
+        </div>
+
+        <div class="form-group">
+          <%= f.label 'Адрес проживания'%><br />
+          <%= f.text_field :street, class: 'small-width-input middle-width-input', placeholder: 'Улица' %>
+          <%= f.text_field :house, class: 'small-width-input', placeholder: 'Дом' %>
+          <%= f.text_field :apartment, class: 'small-width-input apartment-input-width', placeholder: 'Квартира' %>
+          <%= f.text_field :zipcode, class: 'small-width-input zipcode-input-width', placeholder: 'Индекс' %>
+        </div>
+
+        <div class="form-group margin_45px">
+          <%= f.label 'Скайп' %>
+          <%= f.text_field :skype, placeholder: 'Скайп', class: 'form-control' %>
+        </div>
+
+        <%#= f.submit 'Зарегистрироваться', class: 'btn btn-lg btn-primary btn-block' %>
+        <%= f.submit 'Зарегистрироваться', class: 'btn btn-lg btn-primary btn-block' %>
+      <% end %>
+      <%= render 'users/shared/links' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

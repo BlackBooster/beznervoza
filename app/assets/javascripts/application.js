@@ -12,7 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.jplayer
 //= require bootstrap-sprockets
+//= require jquery.validate.min
+//= require jquery.jplayer.min
 //= require player
+//= require regions
 //= require_tree .
+
+jQuery.extend(jQuery.validator.messages, {
+  maxlength: jQuery.validator.format("Максимум до {0} знаков."),
+  required: "Это поле обязательно"
+});

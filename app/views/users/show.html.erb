@@ -1,3 +1,27 @@
-<h1>Users#profile</h1>
-<p>Find me in app/views/users/profile.html.erb</p>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<div class="container sign_up">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="panel-heading">
+        <div class="panel-title text-center">
+          <h1 class="title">Контакты</h1>
+          <hr />
+        </div>
+      </div>
+      <h3>Профиль пользователя</h3>
+      <%= @user.email %><br />
+      <%= @user.last_name %><br />
+      <%= @user.first_name %><br />
+      <%= @user.sur_name %><br />
+      <%= @user.date_of_birth %><br />
+      <%= @country %><br />
+      <%= @region %><br />
+      <%= @city %><br />
+      <%= full_adress%>
+      <%= @user.skype%>
+      <%#= @user.city_id %><br />
+      <%#= if @user.is_female %><br />
+
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn btn-default btn-primary' %>
+    </div>
+  </div>
+</div>

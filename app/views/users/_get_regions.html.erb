@@ -1,0 +1,1 @@
+<%= select_tag 'user[region_id]', options_for_select(@regions.map{ |r| [r.name, r.id] }), :prompt => 'Выберите регион' %>

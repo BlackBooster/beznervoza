@@ -4,7 +4,7 @@ ruby '2.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use mysql as the database for Active Record
-gem 'mysql2', '~> 0.3.18'
+# gem 'mysql2', '~> 0.3.18'
 
 gem 'sprockets-rails', '~> 3.0'
 # Use SCSS for stylesheets
@@ -28,7 +28,10 @@ gem 'puma', '~> 3.4'
 
 gem 'devise', '4.1.1'
 
+# Jquery audioplayer
 gem 'jplayer-rails'
+# Heroku mailer add-on
+gem 'sendgrid'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -40,6 +43,7 @@ gem 'jplayer-rails'
 
 group :development do
   gem 'better_errors', '~> 2.1'
+
 end
 
 group :development, :test do
@@ -53,3 +57,8 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'sendgrid-actionmailer'
+end
