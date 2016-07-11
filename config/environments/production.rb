@@ -83,19 +83,4 @@ Rails.application.configure do
   config.action_mailer.sendgrid_actionmailer_settings = {
     api_key: ENV['SENDGRID_API_KEY']
   }
-
-  access_key_id = ENV["ACCESS_KEY_ID"]
-  secret_access_key = ENV["SECRET_ACCESS_KEY"]
-
-  # create an instance of the s3 client
-  s3 = AWS::S3.new(access_key_id: access_key_id, secret_access_key: secret_access_key)
-
-  # get the bucket
-  bucket = s3.ENV['S3_BUCKET_NAME']
-
-  # retrieve the objects
-  bucket.objects.each do |object|
-    puts object.key
-    puts object.read
-  end
 end
