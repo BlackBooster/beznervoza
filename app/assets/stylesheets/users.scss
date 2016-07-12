@@ -23,21 +23,11 @@
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
-.middle-width-input {
-  width: 50%;
-}
-
-.apartment-input-width {
-  width: 19%;
-}
 
 .margin_45px {
   margin-top: 45px;
 }
 
-.zipcode-input-width {
-  width: 17%;
-}
 
 input.error {
   border: 1px solid #ff0000;
@@ -83,3 +73,36 @@ label.error {
     color: #468847;
     text-align: left;
  }
+
+.sign_up .sign_up--input {
+  display: inline-block;
+  position: relative;
+
+  input {
+    width: 100%;
+  }
+
+  &.-middle {
+    width: 40%;
+  }
+
+  &.-small {
+    width: calc(20% - 5px);
+  }
+
+  label.error {
+    position: absolute;
+    left: 2px;
+    bottom: -4px;
+    transform: translate(0,100%);
+    color: #fff;
+    background: #f00;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: calc(100% - 2px);
+    font-size: 12px;
+    line-height: 16px;
+    padding: 2px 0;
+    text-align: center;
+  }
+}
