@@ -9,10 +9,9 @@
   <%= render 'layouts/messages' %>
 
   <%= render 'layouts/header' %>
-  <%= render 'home/jplayer' %>
 
   <%= yield %>
-
+  <%= render "home/jplayer" if current_page?(new_user_session_path) %>
   <%= javascript_include_tag 'application' %>
 </body>
 </html>
