@@ -13,8 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.validate.min
+//= require video
 //= require bootstrap-sprockets
 //= require regions
+//= require mediaelement-and-player.min
 //= require_tree .
 
 jQuery.extend(jQuery.validator.messages, {
